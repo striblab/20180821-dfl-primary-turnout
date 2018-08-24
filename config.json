@@ -1,0 +1,59 @@
+{
+  "about this file": "This document defines configuration for this project that is not content or copy.",
+
+  "projectIdentifier": "20180821-dfl-primary-turnout",
+
+  "data": {
+    "content": "./content.json",
+    "pkg": "./package.json"
+  },
+
+  "cms": {
+    "id": "NEEDS-CMS-ID-IN-CONFIG.JSON",
+    "pages": ["other", "cms-ids"],
+    "lcds": ["lcd-id-for-first", "lcd-id-for-second"],
+    "rewriteMapping": {
+      "article-lcd-body-content": "_index-content.html"
+    }
+  },
+
+
+  "styles": {
+    "globals": [
+    ]
+  },
+  "js": {
+    "globals": [
+      "https://cdn.polyfill.io/v2/polyfill.min.js",
+      "https://static.startribune.com/assets/libs/pym.js/1.3.2/pym.v1.min.js",
+      "https://static.startribune.com/assets/libs/lodash/4.17.4/lodash.min.js"
+    ]
+  },
+  "publishToken": "a6458ccc95a61b7de0b4b18aef4963b2",
+  "publish": {
+    "default": {
+      "bucket": "static.startribune.com",
+      "path": "news/projects-staging/all/20180821-dfl-primary-turnout",
+      "url": "http://static.startribune.com/news/projects-staging/all/20180821-dfl-primary-turnout/",
+      "cacheSeconds": 30
+    },
+    "testing": {
+      "bucket": "stribtest-bucket",
+      "path": "news/projects/20180821-dfl-primary-turnout",
+      "url": "https://s3.amazonaws.com/stribtest-bucket/news/projects/20180821-dfl-primary-turnout/",
+      "cacheSeconds": 30
+    },
+    "staging": {
+      "bucket": "static.startribune.com",
+      "path": "staging/news/projects/20180821-dfl-primary-turnout",
+      "url": "https://s3.amazonaws.com/stribtest-bucket/staging/news/projects/20180821-dfl-primary-turnout/",
+      "cacheSeconds": 30
+    },
+    "production": {
+      "bucket": "static.startribune.com",
+      "path": "news/projects/all/20180821-dfl-primary-turnout",
+      "url": "http://static.startribune.com/news/projects/all/20180821-dfl-primary-turnout/",
+      "cacheSeconds": 600
+    }
+  }
+}

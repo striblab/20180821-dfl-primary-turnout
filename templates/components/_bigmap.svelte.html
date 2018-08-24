@@ -1,0 +1,91 @@
+<div id="tooltip" class="hidden">
+  <h4 id="title"></h4>
+  <table>
+    <thead>
+      <tr>
+        <th>Party</th>
+        <th class="right">Votes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="label-d"></span>DFL</td>
+        <td id="votes-d" class="right"></td>
+      </tr>
+      <tr>
+        <td><span class="label-r"></span>Republican</td>
+        <td id="votes-r" class="right"></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div id="map-filter">
+  Show precincts with
+  <div id="filter2018" class="filter">
+    <select id="filter-2018-select" bind:value=state2018 on:change="update_map()">
+      <option value="all2018" selected>all party turnout</option>
+      <option value="dfl">higher DFL turnout</option>
+      <option value="gop">higher GOP turnout</option>
+    </select>
+  </div>
+  in 2018 that voted for
+  <div id="filter2016" class="filter">
+    <select id="filter-2016-select" bind:value=state2016 on:change="update_map()">
+      <option value="all2016" selected>any candidate</option>
+      <option value="clinton">Hillary Clinton</option>
+      <option value="trump">Donald Trump</option>
+    </select>
+  </div>
+  in 2016.  
+</div>
+
+<div id="map-container">
+
+  <svg id="precinct-map" viewBox="0 100 640 760"></svg>
+  <canvas width="640" height="860"></canvas>
+
+  <div id="map-legend">
+    <div class="legend-row">
+      <div class="bar blue"></div>
+      <div class="label">Higher DFL turnout</div>
+    </div>
+
+    <div class="legend-row">
+      <div class="bar purple"></div>
+      <div class="label">About the same</div>
+    </div>
+
+    <div class="legend-row">
+      <div class="bar red"></div>
+      <div class="label">Higher GOP turnout</div>
+    </div>
+
+    <div class="legend-footer">
+      <div class="label">← →<br />Voter density</div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  import StribPrecinctMap from "../../app/bigmap.js";
+
+  export default {
+    oncreate() {
+      var m = new StribPrecinctMap('#precinct-map');
+      m.render();
+
+      this.set({
+        map: m,
+      });
+    },
+
+    methods: {
+      update_map() {
+        let { map, state2018, state2016 } = this.get();
+        map.filter_map(state2018, state2016);
+      }
+    }
+  };
+</script>

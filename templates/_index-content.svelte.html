@@ -1,0 +1,50 @@
+
+<div class="strib-styles ssa ssb ssc">
+  <section class="container-lg elex-header">
+
+  <div class="container-lg elex-header">
+    <h5 class="font-popular-light"><span class="font-popular-medium">Election 2018</span></h5>
+    <h1>DFL primary voters turned out in force — even in areas Trump won</h1>
+    <p class="byline">By Chase Davis • <span>Star Tribune</span></p>
+    <!-- share -->
+  </div>
+
+  <div class="container-lg elex-main">
+
+    <section class="body">
+
+      <p>In a year with unusually robust voter turnout, the number of DFL voters in this month's statewide primary elections outpaced Republicans nearly 2:1 — including in many areas that voted for Donald Trump in 2016.</p>
+
+      <p>Whether that foretells a Democratic wave or is simply an isolated result is one of the key questions that will loom over the general election season as it nears its unofficial Labor Day kickoff.</p>
+
+      <p>Election watchers often caution against reading too much into primary election turnout, which depends heavily on party dynamics and the characteristics of individual contests. But with hotly contested governor's races at the top of each party's ticket, this year's primary offers the rare chance to compare party turnout on relatively even terms.</p>
+
+      <p>Use the map below to explore in detail the areas where DFL and Republican voters turned out to vote for governor:</p>
+
+    </section>
+    
+    <BigMap />
+
+    <div class="credits">
+      <p>Source: Election results and precinct data from Minnesota Secretary of State.</p>
+
+      <p>Minnesota primary voters are allowed to vote for either DFL or Republican candidates on a single ballot — not a combination of both. Results reflect voters in each party's governor's race, which attracted the largest number of votes for both parties.</p>
+    </div>
+
+  </div>
+
+  </section>
+</div>
+
+
+<script>
+  // Dependencies and components
+  import BigMap from "./components/_bigmap.svelte.html";
+
+  // Svelte logic
+  export default {
+    components: {
+      BigMap
+    },
+  };
+</script>

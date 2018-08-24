@@ -1,0 +1,430 @@
+/**
+ * Project specific styling.
+ */
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  visibility: hidden;
+}
+
+svg {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+@media all and (-ms-high-contrast:none) {
+  *::-ms-backdrop, .filter {
+    top: 39px;
+  } /* IE11 */
+}
+
+/********** TOOLTIPS **********/
+
+#tooltip {
+  position: absolute;
+  max-width: 15em;
+  background-color: white;
+  z-index:10000;
+  font-size:0.8em;
+  border: 1px solid #565656;
+  border-radius: 2px;
+  margin: 0.5em;
+  padding: 0.5em;
+  pointer-events: none;
+  padding-bottom:0px;
+
+  @media only screen and (max-width: 400px) {
+    display:none!important;
+  }
+}
+
+#tooltip h4 {
+  text-align:left;
+  padding-top: 0;
+  margin-top: 0;
+  font-size: 0.9em !important;
+  margin-bottom:5px;
+}
+
+#tooltip table {
+    margin-bottom:0.5em;
+}
+
+#tooltip th {
+  font-size: 0.6em;
+  text-transform:uppercase;
+  font-weight:normal;
+}
+
+#tooltip th.right {
+  text-align:right;
+}
+
+#tooltip td {
+  font-size: 0.8em;
+  padding-top: 0.5em;
+  padding-bottom: 0.4em;
+  padding-left:2px;
+}
+
+#tooltip td.right {
+  text-align:right;
+}
+
+#tooltip.hidden {
+  display: none;
+}
+
+#tooltip .label-d {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-left: 2px;
+  margin-right: 5px;
+  background-color:#0258A0;
+}
+
+#tooltip .label-r {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-left: 2px;
+  margin-right: 5px;
+  background-color:#C0272D;
+}
+
+/********** FILTER **********/
+
+#map-filter {
+  font-weight:400;
+  font-size:1.2em;
+  width:100%;
+  background-color:whitesmoke;
+  padding: 30px 10px 10px 10px;
+  line-height:2.3em;
+
+  .filter {
+    position:relative;
+    display:inline-block;
+  }
+
+  .filter select {
+    font-weight:bold;
+    width:auto;
+    border:none;
+    border-bottom:1px solid black;
+    border-radius:0px;
+    padding-left:2px;
+    padding-right:2px;
+    text-align: -webkit-center;
+    text-align-last:center;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -webkit-border-radius: 0px;
+  }
+
+  .filter select:focus {
+    box-shadow:none;
+    -webkit-box-shadow:none;
+  }
+
+  .filter select::-ms-expand {
+      display: none;
+  }
+
+}
+
+/********** MAPS **********/
+
+#map-container {
+  position:relative;
+}
+
+.map-state-boundary {
+  fill:none;
+  stroke:lightgray;
+  stroke-width:2px;
+}
+
+.map-county-boundary {
+  fill: none;
+  stroke: white;
+  stroke-width: 0.75px;
+  stroke-linejoin: round;
+}
+
+.same2018 {
+  fill: #874e8e;
+}
+
+.d2018 {
+  fill: #0258A0;
+}
+
+.r2018 {
+  fill: #C0272D;
+}
+
+.none2018 {
+  fill:gray;
+}
+
+.unfill {
+  fill:none;
+}
+
+.map-precinct-boundary:hover {
+  stroke: white;
+  stroke-width:0.5px;
+  fill-opacity:.4!important;
+}
+
+.map-city-point-small {
+    fill: none;
+}
+
+.map-city-point-medium {
+    fill: none;
+}
+
+.map-city-point-large {
+    fill: none;
+}
+
+.map-city-label-large {
+  font-size: 0.8em;
+  font-family:"Helvetica";
+  stroke: darkgray;
+  stroke-width:0.5px;
+
+  @media only screen and (max-width: 660px) {
+    font-size: 1.2em;
+  }
+}
+
+.map-city-label-medium {
+    font-size: 0.65em;
+  font-family:"Helvetica";
+  stroke: darkgray;
+  stroke-width:0.5px;
+
+  @media only screen and (max-width: 660px) {
+    font-size: 1em;
+  }
+}
+
+.map-city-label-small {
+    font-size: 0.5em;
+  font-family:"Helvetica";
+  stroke: darkgray;
+  stroke-width:0.5px;
+
+  @media only screen and (max-width: 660px) {
+    font-size: 0.8em;
+  }
+}
+
+.map-road-boundary {
+  fill: none;
+  stroke: #dcdcdc;
+  stroke-width: 0.5px;
+  stroke-linejoin: round;
+}
+
+.map-interstate-boundary {
+  fill: none;
+  stroke: #dcdcdc;
+  stroke-width: 0.8px;
+  stroke-linejoin: round;
+}
+
+/********** LEGEND *********/
+
+  #map-legend {
+    position:absolute;
+    top:80px;
+    left:350px;
+    width:300px;
+    font-size:11px;
+    line-height:11px;
+    margin-left:auto;
+    font-family: "Benton Sans";
+    color:#303030;
+
+    @media only screen and (max-width: 660px) {
+      position:static;
+      display:block;
+      margin-left:auto;
+      margin-right:auto;
+      max-width:250px;
+      text-align:center;
+      margin-top:30px;
+    }
+
+  }
+
+  .legend-row {
+    height:14px;
+    margin-bottom:1px;
+  }
+
+  .legend-row .bar {
+    width:30%;
+    height:10px;
+    float:left;
+  }
+
+  .legend-row .label {
+    width:68%;
+    float:right;
+    text-align:left;
+    font-weight:normal;
+    line-height:12px;
+
+  }
+
+  .legend-footer {
+    width:30%;
+    margin-top:5px;
+
+    .label {
+      font-weight:normal;
+      line-height:12px;
+    }
+  }
+
+  .footer-left {
+    float:left;
+    text-align:left;
+    width:15%;
+  }
+
+  .footer-right {
+    float:right;
+    text-align:left;
+    width:15%;
+  }
+
+  .blue {
+    background-image: linear-gradient(to right, white , #0258A0);
+  }
+
+  .purple {
+    background-image: linear-gradient(to right, white , #874e8e);
+  }
+
+  .red {
+    background-image: linear-gradient(to right, white , #C0272D);
+  }
+
+/********* ANNOTATIONS **********/
+
+.annotation-note-label {
+  font-size:8px;
+  font-weight:normal;
+}
+
+.annotation-group {
+  fill:none;
+
+  @media only screen and (max-width: 660px) {
+    display:none;
+  }
+}
+
+/********** PAGE STYLES **********/
+
+section p {
+  font-family:"Poynter Serif RE",Georgia,Times,serif;
+  letter-spacing:"-0.3px";
+  font-size:15px;
+  line-height:140%;
+}
+
+a:hover {
+  color:#036;
+}
+
+.elex-header {
+  text-align: center;
+}
+
+.elex-header h1 {
+  padding-top: 0.3em;
+  line-height: 1.1em;
+}
+
+.elex-header h5, .elex-header h5 span {
+  text-transform: uppercase;
+  font-size: .9em;
+  letter-spacing: .08em;
+  padding-top: 40px;
+}
+
+.elex-header h5 span{
+  font-size: .9em;
+  letter-spacing: .1em;
+}
+
+.states {
+  fill:none !important;
+  pointer-events:none !important;
+  fill-opacity:0 !important;
+}
+
+.elex-header h5 span,
+.elex-header .byline {
+  color:black;
+  font-weight: bold;
+}
+
+.elex-header .byline span {
+  font-weight: normal;
+}
+
+section.body {
+  padding-top: 20px;
+  margin-bottom: 45px;
+  max-width: 960px;
+  margin-left:auto;
+  margin-right:auto;
+  text-align:left;
+
+
+  @media only screen and (max-width: 660px) {
+    margin-bottom:0px;
+  }
+}
+
+section.body p {
+  max-width: 525px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.credits {
+  width:100%;
+  text-align:left;
+
+  @media only screen and (max-width: 660px) {
+    margin-top:1em;
+  }
+
+  p {
+    font-family:"Benton Sans";
+    font-size:0.8em;
+    color:#808080;
+    line-height:1.2em;
+  }
+}
