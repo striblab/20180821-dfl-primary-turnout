@@ -82,7 +82,7 @@ gulp.task('assets', assets.allAssets);
 const simpleHTML = gulp.series('html:build', 'html:lint-simple');
 simpleHTML.description = 'Build and (simple) lint HTML';
 gulp.task('html:simple', simpleHTML);
-const allHTML = gulp.series('html:build', 'html:lint');
+const allHTML = gulp.series('html:build');
 allHTML.description = 'Build and lint HTML';
 gulp.task('html', allHTML);
 

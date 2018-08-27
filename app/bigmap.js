@@ -42,7 +42,7 @@ var annotation_data = [
   {
     type: annotationCalloutCircle,
     note: {
-        label: "DFL voters turned out at higher rates than Republicans across a number of suburban precincts, many of which voted for Donald Trump in 2016.",
+        label: "DFL voters turned out at higher rates than Republicans throughout a ring of suburban precincts, including these in Dakota County, many of which voted for Donald Trump in 2016.",
         wrap: 150,
         lineType:'vertical'
     },
@@ -225,9 +225,10 @@ class StribPrecinctMap {
            .style("top", (event.pageY + -60) + "px");
      
           // Set text
+          select('#tooltip').select(".winner2016").text('2016 winner: ' + lookup.winner2016.replace(/^\w/, c => c.toUpperCase()));
           select('#tooltip').select("#title").text(d.properties.PCTNAME);
-          select('#tooltip').select("#votes-d").text(lookup.d);
-          select('#tooltip').select("#votes-r").text(lookup.r);
+          select('#tooltip').select("#votes-d").text(lookup.d.toLocaleString());
+          select('#tooltip').select("#votes-r").text(lookup.r.toLocaleString());
 
           // Unhide
           select("#tooltip").classed("hidden", false);

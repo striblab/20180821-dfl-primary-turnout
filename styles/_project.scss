@@ -52,8 +52,16 @@ svg {
   padding-top: 0;
   margin-top: 0;
   font-size: 0.9em !important;
-  margin-bottom:5px;
+  margin-bottom:3px;
 }
+
+#tooltip .winner2016 {
+  font-size:0.7em;
+  text-align:left;
+  color:#686868;
+  margin-bottom:3px;
+}
+
 
 #tooltip table {
     margin-bottom:0.5em;
@@ -149,6 +157,7 @@ svg {
 
 #map-container {
   position:relative;
+  margin-top:40px;
 }
 
 .map-state-boundary {
@@ -253,7 +262,7 @@ svg {
 
   #map-legend {
     position:absolute;
-    top:80px;
+    top:30px;
     left:350px;
     width:300px;
     font-size:11px;
@@ -269,7 +278,8 @@ svg {
       margin-right:auto;
       max-width:250px;
       text-align:center;
-      margin-top:30px;
+      margin-top:20px;
+      margin-bottom:20px;
     }
 
   }
